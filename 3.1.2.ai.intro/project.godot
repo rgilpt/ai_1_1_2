@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="3.1.1.AI.Intro"
-run/main_scene="res://scenes/world.tscn"
+config/name="3.1.2.AI.SensorsActuators"
+run/main_scene="res://scenes/library1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

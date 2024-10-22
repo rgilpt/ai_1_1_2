@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 400.0
+@export var SPEED = 400.0
 var brake_mod = 0.08
 
 
