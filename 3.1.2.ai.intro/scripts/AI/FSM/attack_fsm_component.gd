@@ -18,6 +18,6 @@ func action_state():
 	var target_pos = (target_base_pos - actor.position).normalized()
 	actor.velocity = target_pos * actor.ATTACK_SPEED
 	print(str(actor.position.distance_to(target_base_pos)))
-	if actor.position.distance_to(target_base_pos) < 190:
+	if actor.position.distance_to(target_base_pos) < 20:
 		actor.velocity = Vector2()
 	

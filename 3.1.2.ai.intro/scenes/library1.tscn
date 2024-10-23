@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://cq50xaedo6vkp"]
+[gd_scene load_steps=14 format=4 uid="uid://cq50xaedo6vkp"]
 
 [ext_resource type="Texture2D" uid="uid://dexqap3duk5f7" path="res://assets/Tileset.png" id="1_68sa4"]
 [ext_resource type="Script" path="res://scenes/library_1.gd" id="1_jm1sk"]
 [ext_resource type="Texture2D" uid="uid://bq5voqn0t5naq" path="res://assets/Props.png" id="2_4jei4"]
 [ext_resource type="PackedScene" uid="uid://6uwhbcswn6ci" path="res://scenes/player.tscn" id="3_olhcw"]
+[ext_resource type="PackedScene" uid="uid://y8mga61awjjo" path="res://scenes/change_scene.tscn" id="5_1yrtl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r4hhf"]
 texture = ExtResource("1_68sa4")
@@ -930,8 +931,8 @@ texture = ExtResource("2_4jei4")
 [sub_resource type="TileSet" id="TileSet_h4f80"]
 sources/0 = SubResource("TileSetAtlasSource_744ec")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4s6o8"]
-size = Vector2(32, 8)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ih31t"]
+size = Vector2(258, 61)
 
 [node name="Library" type="Node2D"]
 script = ExtResource("1_jm1sk")
@@ -963,10 +964,17 @@ SPEED = 100.0
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(368, 4)
+[node name="ChangeScene" parent="." instance=ExtResource("5_1yrtl")]
+next_level = "res://scenes/library2.tscn"
+next_level_position = Vector2(368, -65)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_4s6o8")
+[node name="ChangeScene2" parent="." instance=ExtResource("5_1yrtl")]
+position = Vector2(239, 167)
+next_level = "res://scenes/game_over.tscn"
+next_level_position = Vector2(368, -65)
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="CollisionShape2D" parent="ChangeScene2" index="0"]
+position = Vector2(81, 23.5)
+shape = SubResource("RectangleShape2D_ih31t")
+
+[editable path="ChangeScene2"]

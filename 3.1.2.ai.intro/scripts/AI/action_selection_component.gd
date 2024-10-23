@@ -68,6 +68,12 @@ func load_tranning_data():
 		#print(json_as_dict)
 		return json_as_dict["data"]
 
+func store_model():
+	model_action_selection.store("res://data/model/nn_action_selection.json")
+
+func load_model():
+	model_action_selection.load("res://data/model/nn_action_selection.json")
+
 func train():
 	var inputs = load_tranning_data()
 	for i in range(EPOCHS):

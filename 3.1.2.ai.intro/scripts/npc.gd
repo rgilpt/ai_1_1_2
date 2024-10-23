@@ -9,9 +9,9 @@ var melee_attack = 20
 
 var ready_to_heal = false
 
-const WANDERING_SPEED := 200.0
-const ATTACK_SPEED := 250.0
-const RUNAWAY_SPEED := 300.0
+const WANDERING_SPEED := 20.0
+const ATTACK_SPEED := 80.0
+const RUNAWAY_SPEED := 50.0
 
 var moving_modifier:float = 1.0
 
@@ -129,3 +129,9 @@ func _on_t_heal_ready_timeout() -> void:
 	
 func train():
 	action_selection_component.train()
+	
+func store_model():
+	action_selection_component.store_model()
+
+func load_model():
+	action_selection_component.load_model()

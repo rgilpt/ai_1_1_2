@@ -19,6 +19,7 @@ var ready_to_heal = false
 
 func _ready() -> void:
 	health = 100
+	position = Meta.player_position
 
 func _physics_process(delta: float) -> void:
 	texture_progress_bar.value = health
@@ -39,6 +40,9 @@ func _physics_process(delta: float) -> void:
 		attack_enemies()
 		ready_to_attack = false
 		t_attack_ready.start(0.7)
+	
+	if health <= 0:
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 func suffer_attack(damage):
 	health -= damage * (1/defense)
