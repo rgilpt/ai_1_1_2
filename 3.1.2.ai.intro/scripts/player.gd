@@ -18,7 +18,7 @@ var ready_to_attack = true
 var ready_to_heal = false
 
 func _ready() -> void:
-	health = 100
+	health = Meta.player_health
 	position = Meta.player_position
 
 func _physics_process(delta: float) -> void:
