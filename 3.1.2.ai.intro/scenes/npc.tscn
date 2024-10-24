@@ -41,7 +41,7 @@ fill_from = Vector2(0.140777, 0.519417)
 fill_to = Vector2(0.699029, 0.36246)
 
 [node name="NPC" type="CharacterBody2D" groups=["NPC"]]
-collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_m3sie")
 
 [node name="NPCBot" type="Node" parent="."]

@@ -6,8 +6,8 @@ extends Node2D
 func _ready() -> void:
 	#npc.train()
 	#npc.store_model()
-	
-	npc.load_model()
+	if npc != null:
+		npc.load_model()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
